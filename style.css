@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@321&display=swap');
+main, nav, article, aside, footer {
+	border: 1px solid gray;
+    background-color: white;
+
+}
+
+body{
+    background-image: url("kepek/hatter.jpg");
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+section{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+main {
+    margin:auto;
+    max-width: 66%;
+    display: grid;
+    grid-template-areas:
+                        "h h h h"
+                        "n a a as"
+                        "f f f f";
+}
+
+header {
+    background-image: url("kepek/header_banner.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    grid-area:h;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 31.6%;
+    color: rgb(255, 255, 255);
+    font-family: 'Oswald';
+
+}
+
+nav {
+    grid-area:n;
+    text-align: center;
+}
+
+nav ul li {
+    border-radius: 10px;
+    background: #51d6d6;
+    padding: 5px;
+    list-style-type: none;
+}
+
+article {
+    grid-area:a;
+    background-color: pink;
+    grid-gap: 10px;
+}
+
+aside {
+    grid-area:as;
+    float:left
+}
+
+footer {
+    grid-area:f;
+    text-align: center;
+    background-color: rgb(106, 106, 255);
+}
+
+@media screen and (max-width:600px){
+    footer nav ul {
+        grid-template-columns: 1fr;
+    }
+    main {
+        grid-template-areas: "h"
+                             "a"
+                             "as"
+                             "f";
+    }
+    header nav ul {
+        grid-template-columns: 1fr;
+    }
+    article{
+        grid-template-columns: 1fr;
+    }
+}
